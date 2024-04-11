@@ -16,6 +16,8 @@ spec:
       labels:
         app: tls-app
     spec:
+      nodeSelector:
+        kubernetes.io/os: linux
       containers:
       - image: docker.io/jcaneira/tls-app:latest
         imagePullPolicy: Always
