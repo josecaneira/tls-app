@@ -2,7 +2,7 @@
 
 ***Modified version of Google Example TLS Web Application in Go***
 
-Key features:  
+Key features/changes:  
 * Docker file changes:  
   Replaced Google base image "gcr.io/distroless/base-debian11" by Microsoft base image "mcr.microsoft.com/devcontainers/base:bullseye".  
   Replaced runtime user/group from "nonroot:nonroot" to "nobody:nobody".  
