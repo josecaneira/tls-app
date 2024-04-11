@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - image: docker.io/jcaneira/tls-app:latest
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         name: tls-app
         volumeMounts:
           - mountPath: "/etc/tls"

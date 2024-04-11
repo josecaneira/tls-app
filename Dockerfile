@@ -24,7 +24,8 @@ COPY *.go ./
 RUN CGO_ENABLED=0 GOOS=linux go build -o /hello-app-tls
 
 #FROM gcr.io/distroless/base-debian11
-FROM mcr.microsoft.com/devcontainers/base:bullseye
+#FROM mcr.microsoft.com/devcontainers/base:bullseye
+FROM mcr.microsoft.com/cbl-mariner/distroless/minimal:2.0-nonroot
 WORKDIR /
 COPY --from=builder /hello-app-tls /hello-app-tls
 #USER nonroot:nonroot
