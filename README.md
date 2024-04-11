@@ -12,7 +12,7 @@ Key features/changes from original:
 
 
 CHANGELOG:  
-* 11/04/2023:
+* 11/04/2024:
   - Public release
   - Switch to "mcr.microsoft.com/cbl-mariner/distroless/minimal:2.0-nonroot" base image for size optimization.
 		
