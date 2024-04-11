@@ -14,7 +14,7 @@
 //
 //
 // Original work by Google Inc. at https://github.com/googlecloudplatform/kubernetes-engine-samples/tree/394477ca2a99/quickstarts/hello-app-tls
-// Derivate work by José Caneira at https://github.com/josecaneira for TLS end-to-end Demo.
+// Derivate work by José Caneira at https://github.com/josecaneira/tls-app for TLS end-to-end Demo.
 //
 
 package main
