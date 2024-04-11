@@ -1,0 +1,50 @@
+apiVersion:  apps/v1
+kind: Deployment 
+metadata:
+  labels:
+    app: tls-app
+  name: tls-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: tls-app
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: tls-app
+    spec:
+      containers:
+      - image: docker.io/jcaneira/tls-app:latest
+        imagePullPolicy: IfNotPresent
+        name: tls-app
+        volumeMounts:
+          - mountPath: "/etc/tls"
+            name: tls-app-ssl
+            readOnly: true
+        env:
+          - name: TLS_CERT
+            value: /etc/tls/tls.crt
+          - name: TLS_KEY
+            value: /etc/tls/tls.key
+        ports:
+        - containerPort: 8443
+      volumes:
+        - name: tls-app-ssl
+          secret:
+            secretName: tls-app-ssl-cert
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: tls-app-ssl
+spec:
+  selector:
+    app: tls-app
+  ports:
+  - protocol: TCP
+    port: 443
+    targetPort: 8443

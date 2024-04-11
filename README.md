@@ -24,4 +24,8 @@ Built image available at: https://hub.docker.com/r/jcaneira/tls-app
 
 Docker pull command: docker pull jcaneira/tls-app  
 
+AKS ready deployment: kubectl apply -f https://raw.githubusercontent.com/josecaneira/tls-app/main/tls-app.yaml  
+expects you have a TLS secret named "tls-app-ssl-cert" residing on same namespace
+exposing ingress not included.
+
 __________________________________________________________________________________________________________________________________________________________________________________________________________
