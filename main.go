@@ -60,9 +60,9 @@ func hello(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Backend Pod Hostname: %s\n", host)
 	if headerIP := r.Header.Get("X-Forwarded-For"); headerIP != "" {
 		fmt.Fprintf(w, "Client IP (X-Forwarded-For): %s\n", headerIP)
-		log.Printf("Serving request: %s for: %s", r.URL.Path, headerIP)
+		log.Printf("Serving request: %s on: %s for: %s", r.URL.Path, r.Host, headerIP)
 	} else {
 		fmt.Fprintf(w, "Client IP: %s\n", r.RemoteAddr)
-		log.Printf("Serving request: %s for: %s", r.URL.Path, r.RemoteAddr)
+		log.Printf("Serving request: %s on: %s for: %s", r.URL.Path, r.Host, r.RemoteAddr)
 	}
 }
