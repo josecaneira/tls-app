@@ -12,6 +12,8 @@ Key features/changes from original:
 
 
 CHANGELOG:  
+* 13/08/2024:
+  - Added pod hostname collection into pod logs.
 * 20/06/2024:
   - Added domain name collection into pod logs.  
 * 11/04/2024:
